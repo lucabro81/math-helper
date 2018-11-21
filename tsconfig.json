@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "es6",
+    "target": "es6",
+    "moduleResolution": "node",
+
+    "declaration": true,
+    "noImplicitAny": false,
+    "outDir": "./dist",
+    "experimentalDecorators": true,
+    "types" : [
+      "jasmine"
+    ]
+  }
+}

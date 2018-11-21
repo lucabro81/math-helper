@@ -1,0 +1,30 @@
+{
+  "name": "math-helper",
+  "version": "1.0.3",
+  "description": "",
+  "main": "./dist/MathHelper/index.js",
+  "typings": "./dist/MathHelper/index.d.ts",
+  "files": [
+    "dist/MathHelper"
+  ],
+  "scripts": {
+    "tsc": "tsc",
+    "build": "rm -rf dist && npm run tsc",
+    "publishPackage": "npm run build && npm publish",
+    "test": "karma start"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jasmine": "^2.5.35",
+    "jasmine-core": "^3.3.0",
+    "karma": "^3.1.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-cli": "^1.0.1",
+    "karma-jasmine": "^1.0.2",
+    "karma-typescript": "^3.0.13"
+  },
+  "dependencies": {
+    "typescript": "^3.1.6"
+  }
+}
