@@ -1,8 +1,9 @@
 # math-helper
 
 ## Installation
-
-    npm install math-helper --save
+```
+npm install math-helper --save
+```
     
 ## Docs
 
@@ -22,14 +23,15 @@
 ### General <a name="general"></a>
 
 #### isPrime(n: number): boolean <a name="isPrime"></a>
-
-    import * as MH from 'math-helper'
-     
-    let is_prime:boolean = MH.General.isPrime(13);
-    console.log(is_prime) // true
-     
-    let is_not_prime:boolean = MH.General.isPrime(14);    
-    console.log(is_not_prime) // false
+```Typescript
+import * as MH from 'math-helper'
+ 
+let is_prime:boolean = MH.General.isPrime(13);
+console.log(is_prime) // true
+ 
+let is_not_prime:boolean = MH.General.isPrime(14);    
+console.log(is_not_prime) // false
+```
 
 #### nextPrime(n: number): number
 
