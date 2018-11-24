@@ -43,6 +43,7 @@ npm install math-helper --save
     * [cosWithAmplitude(rad:number, amplitude:number):number](#cosWithAmplitude)
     * [cosWithShift(rad:number, shift:number):number](#cosWithShift)
 
+
 ### General <a name="general"></a>
 
 #### isPrime(n: number): boolean <a name="isPrime"></a>
@@ -72,10 +73,10 @@ console.log(MH.General.isEven(1223)); // false
 console.log(MH.General.isEven(1222)); // true
 ```
     
-#### isEvenBitwise(num: number): boolean; <a name="isEvenBitwise"></a>
+#### isEvenBitwise(num: number): boolean <a name="isEvenBitwise"></a>
 Come la precedente ma utilizza operazioni bitwise, utile nel caso di grandi iterazioni
 
-#### log(base: number, value: number): number; <a name="log"></a>
+#### log(base: number, value: number): number <a name="log"></a>
 ```Typescript
 import * as MH from 'math-helper'
  
@@ -84,7 +85,7 @@ console.log(log); // 2
 ```
 È possibile specificare una base arbitraria (**N.B.**: non sono ancora presenti controlli su base e argomento)
 
-#### powerOfTwo(num: number): boolean; <a name="powerOfTwo"></a>
+#### powerOfTwo(num: number): boolean <a name="powerOfTwo"></a>
 ```Typescript
 import * as MH from 'math-helper'
  
@@ -93,7 +94,7 @@ console.log(result); // 4096
 ```
 Calcole le potenze di due specificando l'esponente, con operazioni bitwise
 
-#### isDivisibleByPowOf2(num: number, divisor: number): boolean; <a name="isDivisibleByPowOf2"></a>
+#### isDivisibleByPowOf2(num: number, divisor: number): boolea <a name="isDivisibleByPowOf2"></a>
 ```Typescript
 import * as MH from 'math-helper'
  
@@ -102,10 +103,10 @@ console.log(is_divisible); // false
 ```
 Controlla se un numero è divisibile per una potenza di 2 con operazioni bitwise, non funziona correttamente se si passa un divisore che non sia potenza di 2
 
-#### isDivisible(num: number, divisor: number): boolean; <a name="isDivisible"></a>
+#### isDivisible(num: number, divisor: number): boolean <a name="isDivisible"></a>
 Come il precedente ma usa solo l'operatore % e non ha limitazioni per i dati in ingresso
 
-#### bitForNumberByBase(num: number, base: number, n_bits: number): number; <a name="bitForNumberByBase"></a>
+#### bitForNumberByBase(num: number, base: number, n_bits: number): number <a name="bitForNumberByBase"></a>
 ```Typescript
 import * as MH from 'math-helper'
  
@@ -114,7 +115,7 @@ console.log(nbit); // 3
 ```
 Fornisce il numero di bit necessari a rappresentare il numero in ingresso in funzione dalla base fornita
 
-#### factorial(num: number, tmp_fact?: number): number; <a name="factorial"></a>
+#### factorial(num: number, tmp_fact?: number): number <a name="factorial"></a>
 ```Typescript
 import * as MH from 'math-helper'
  
@@ -125,7 +126,7 @@ Calcolo con funzione tail recursive
 
 ### Geometry <a name="geometry"></a>
 
-#### plane(a:number, b:number, c:number, d:number):Polynomial3D <a name="parabola"></a>
+#### plane(a:number, b:number, c:number, d:number):Polynomial3D <a name="plane"></a>
 ```Typescript
 import * as MH from 'math-helper'
 
@@ -135,7 +136,7 @@ let plane:Array<number> = MH.Geometry.plane(2, 3, 4)(data);
 console.log(plane);
 ```
 
-#### projectOnPlane(polynomial:Polynomial2D, plane:Polynomial3D):Polynomial3D <a name="ellipse"></a>
+#### projectOnPlane(polynomial:Polynomial2D, plane:Polynomial3D):Polynomial3D <a name="projectOnPlane"></a>
 ```Typescript
 import * as MH from 'math-helper'
 
@@ -184,57 +185,142 @@ let ellipse:Array<number> = MH.Geometry.ellipseParametric(2, 3, 4, 5, 0.1);
 console.log(ellipse);
 ```
 
+
 ### Statistic <a name="statistic"></a>
 
 #### arithmeticMean(data:Array<number>):number <a name="arithmeticMean"></a>
 ```Typescript
 import * as MH from 'math-helper'
+
+let data:Array<number> = Array.from({length: 100}, () => Math.floor(Math.random() * 100));
+let mean:Array<number> = MH.Statistic.arithmeticMean(data);
+
+console.log(mean);
 ```
 
 #### arithmeticWeightedMean(data:Array<Array<number>>):number <a name="arithmeticWeightedMean"></a>
 ```Typescript
 import * as MH from 'math-helper'
+
+let data:Array<number> = Array.from({length: 100}, () => Math.floor(Math.random() * 100));
+let mean:Array<number> = MH.Statistic.arithmeticWeightedMean(data);
+
+console.log(mean);
 ```
 
 #### linearRegression(data:Array<Array<number>>):Array<Array<number>> <a name="linearRegression"></a>
 ```Typescript
 import * as MH from 'math-helper'
+
+let data:Array<Array<number>> = Array.from({length: 100}, () => [Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)]);
+let regression:Array<Array<number>> = MH.Statistic.linearRegression(data);
+
+console.log(regression);
 ```
 
 #### binomialCoefficient(n:number, m:number):number <a name="binomialCoefficient"></a>
 ```Typescript
 import * as MH from 'math-helper'
+
+let bc:Array<Array<number>> = MH.Statistic.binomialCoefficient(5, 2);
+
+console.log(bc); // 10
 ```
 
 #### howManyPermutationsR(data:Array<any>):number <a name="howManyPermutationsR"></a>
 ```Typescript
 import * as MH from 'math-helper'
+
+let data:Array<number> = Array.from({length: 100}, () => Math.floor(Math.random() * 100));
+let permutations:number = MH.Statistic.howManyPermutationsR(data);
+
+console.log(permutations);
 ```
+Permutazioni con ripetizione
 
 #### howManyPermutations(data:Array<any>):number <a name="howManyPermutations"></a>
 ```Typescript
 import * as MH from 'math-helper'
+
+let data:Array<number> = Array.from({length: 100}, () => Math.floor(Math.random() * 100));
+let permutations:number = MH.Statistic.howManyPermutations(data);
+
+console.log(permutations);
 ```
 
 #### howManyDispositionsR(data:Array<any>, m:number):number <a name="howManyDispositionsR"></a>
 ```Typescript
 import * as MH from 'math-helper'
+
+let data:Array<number> = Array.from({length: 100}, () => Math.floor(Math.random() * 100));
+let dispositions:number = MH.Statistic.howManyDispositionsR(data);
+
+console.log(dispositions);
 ```
+Disposizioni con ripetizione
 
 #### howManyDispositions(data:Array<any>, m:number):number <a name="howManyDispositions"></a>
 ```Typescript
 import * as MH from 'math-helper'
+
+let data:Array<number> = Array.from({length: 100}, () => Math.floor(Math.random() * 100));
+let dispositions:number = MH.Statistic.howManyDispositions(data);
+
+console.log(dispositions);
 ```
 
 #### howManyCombinationsR(data:Array<any>, m:number):number <a name="howManyCombinationsR"></a>
 ```Typescript
 import * as MH from 'math-helper'
+
+let data:Array<number> = Array.from({length: 100}, () => Math.floor(Math.random() * 100));
+let combinations:number = MH.Statistic.howManyCombinationsR(data);
+
+console.log(combinations);
 ```
+Combinazioni con ripetizione
 
 #### howManyCombinations(data:Array<any>, m:number):number <a name="howManyCombinations"></a>
 ```Typescript
 import * as MH from 'math-helper'
+
+let data:Array<number> = Array.from({length: 100}, () => Math.floor(Math.random() * 100));
+let combinations:number = MH.Statistic.howManyCombinations(data);
+
+console.log(combinations);
 ```
 
 
 ### Trigonometry <a name="trigonometry"></a>
+
+#### sinWithAmplitude(rad:number, amplitude:number):number <a name="sinWithAmplitude"></a>
+```Typescript
+import * as MH from 'math-helper'
+
+let sin:number = MH.Trogonometry.sinWithAmplitude(Math.PI/6, 3);
+console.log(sin);
+```
+
+#### sinWithShift(rad:number, shift:number):number <a name="sinWithShift"></a>
+```Typescript
+import * as MH from 'math-helper'
+
+let sin:number = MH.Trogonometry.sinWithShift(Math.PI/6, 3);
+console.log(sin);
+```
+
+#### cosWithAmplitude(rad:number, amplitude:number):number <a name="cosWithAmplitude"></a>
+```Typescript
+import * as MH from 'math-helper'
+
+let cos:number = MH.Trogonometry.cosWithAmplitude(Math.PI/6, 3);
+console.log(cos);
+```
+
+#### cosWithShift(rad:number, shift:number):number <a name="cosWithShift"></a>
+```Typescript
+import * as MH from 'math-helper'
+
+let cos:number = MH.Trogonometry.cosWithShift(Math.PI/6, 3);
+console.log(cos);
+```
