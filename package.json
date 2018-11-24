@@ -1,6 +1,6 @@
 {
   "name": "math-helper",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "./dist/MathHelper/index.js",
   "typings": "./dist/MathHelper/index.d.ts",
