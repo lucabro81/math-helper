@@ -41,7 +41,7 @@ export class GeometryChain extends AbsBaseChain {
      * @returns {GeometryChain}
      */
     public parabola(a:number, b:number, c:number):GeometryChain {
-        this.curr_value = GeometryChain.class_ref.parabola(a, b, c, <Array<number>>this.curr_value);
+        this.curr_value = GeometryChain.class_ref.parabola(a, b, c)(this.curr_value);
         return this;
     }
 
@@ -54,7 +54,7 @@ export class GeometryChain extends AbsBaseChain {
      * @returns {GeometryChain}
      */
     public ellipse(cx:number, cy:number, a:number, b:number):GeometryChain {
-        this.curr_value = GeometryChain.class_ref.ellipse(cx, cy, a, b, <Array<number>>this.curr_value);
+        this.curr_value = GeometryChain.class_ref.ellipse(cx, cy, a, b)(this.curr_value);
         return this;
     }
 
