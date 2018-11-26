@@ -1,6 +1,6 @@
 {
   "name": "math-helper",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "main": "./dist/MathHelper/index.js",
   "typings": "./dist/MathHelper/index.d.ts",
@@ -13,8 +13,13 @@
     "publishPackage": "npm run build && npm publish",
     "test": "karma start"
   },
-  "author": "",
+  ,
+  "author": "Luca Brognara",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucabro81/math-helper/issues"
+  },
+  "homepage": "https://github.com/lucabro81/math-helper#readme",
   "devDependencies": {
     "@types/jasmine": "^2.5.35",
     "jasmine-core": "^3.3.0",
