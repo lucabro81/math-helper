@@ -13,7 +13,6 @@
     "publishPackage": "npm run build && npm publish",
     "test": "karma start"
   },
-  ,
   "author": "Luca Brognara",
   "license": "ISC",
   "bugs": {
